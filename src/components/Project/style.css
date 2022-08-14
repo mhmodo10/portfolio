@@ -1,0 +1,273 @@
+.projectWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37vw;
+    height: 70vh;
+    margin-top: 5%;
+    position: relative;
+    margin-left: 50%;
+    pointer-events: auto;
+}
+
+.left{
+    margin-left: 10%;
+}
+.imageWrapper {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 23px 8px rgba(0,0,0,0.15); 
+    box-shadow: 0px 0px 23px 8px rgba(0,0,0,0.15);
+}
+
+.imageOverlay {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0.2;
+}
+
+.description {
+    color: white;
+    font-size: 32pt;
+    margin-left: 10%;
+    margin-top: 10%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    white-space: normal;
+    text-align: left;
+}
+
+.description h1 {
+    font-size: 2.5rem;
+}
+
+.description p {
+    margin-top: 5%;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+.yearWrapper{
+    order: 1;
+    align-self: flex-end;
+    justify-self: flex-end;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    margin-bottom: 15%;
+    font-size: 80pt;
+    color: rgba(255,255,255,0.5);
+    font-weight: bold;
+    width: 11%;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -45px;
+}
+
+.bottomContainer {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: rgba(255, 255, 255, 0.555) 0px 0px 3px;
+    white-space: nowrap;
+}
+.technologies{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    width: 50%;
+    height: 7%;
+}
+
+.technology{
+    color: rgb(255, 255, 255);
+    background: rgba(192, 192, 192, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projectContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    order: 2;
+
+}
+
+.readMoreButton {
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: clamp(150px,190px,300px);
+    min-width: 100px;
+    min-height: 50px;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    font-size: 20pt;
+    margin-top: clamp(5%,10px,20px);
+    cursor: pointer;
+}
+
+.projectContainer:hover .imageOverlay{
+    animation: fadeBackground 500ms ease 0s;
+    animation-fill-mode: forwards;
+}
+
+.projectContainer:hover ~ .yearWrapper{
+    animation: slideLeft 500ms ease 0s;
+    animation-fill-mode: forwards;
+}
+.projectContainer:hover .bottomContainer .projectTitle{
+    transform: translateY(-4.3rem);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 300ms,transform 300ms ease-in-out;
+}
+.projectContainer:hover .description{
+    transform: translate(0);
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.readMoreButton:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+@keyframes fadeBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes revealButton {
+    100%{
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 300px){
+    .yearWrapper{
+        font-size: 50pt;
+        letter-spacing: -30px;
+        width: 2rem;
+        transform: translateX(-30%);
+        padding-bottom: 10%;
+    }
+    .projectWrapper{
+        width: 90vw;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        padding-bottom: 10%;
+    }
+    .description h1{
+        font-size: 1.4rem;
+    }
+    .description p {
+        font-size: 1rem;
+    }
+    .technologies{
+        width: 60%;
+    }
+    .technology{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .yearWrapper{
+        width: 2rem;
+        font-size: 70pt;
+        transform: translateX(-2rem);
+    }
+    .description h1{
+        font-size: 2rem;
+    }
+    .description p {
+        font-size: 1.5rem;
+    }
+    .technology{
+        width: 5vw;
+        height: 5vw;
+    }
+    .projectTitle{
+        font-size: 2.3rem;
+    }
+    @keyframes slideLeft {
+        100% {
+            transform: translateX(-3.5rem);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .projectWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        height: 75vh;
+        margin-top: 5%;
+        position: relative;
+        margin-left: 50%;
+        pointer-events: auto;
+        margin-bottom: 0%;
+        padding-bottom: 10px;
+    }
+    .projectTitle{
+        font-size: 1.5rem;
+    }
+    .yearWrapper{
+        font-size: 70pt;
+        width: 3rem;
+        transform: translateX(-1.2rem);
+    }
+    @keyframes slideLeft {
+        100% {
+            transform: translateX(-3rem);
+        }
+    }
+    .left{
+        margin-left: 10%;
+    }
+    .description h1{
+        font-size: 2rem;
+    }
+    .description p {
+        font-size: 1.5rem;
+    }
+    .technology{
+        width: 70px;
+        height: 70px;
+    }
+}

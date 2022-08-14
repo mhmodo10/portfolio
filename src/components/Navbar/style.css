@@ -1,0 +1,48 @@
+.navbarWrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    /* font-size: 20pt; */
+    padding-top: 1%;
+    font-family: Fredoka,sans-serif;
+}
+
+.cv {
+    cursor: pointer;
+}
+.cv:hover{
+    transform: scale(1.1)
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.title {
+    font-size: 18pt;
+    color: rgba(255,255,255,0.5);
+}
+
+@media screen and (min-width: 300px){
+    .title{
+        font-size: 1rem;
+    }
+    .navbarWrapper{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .title{
+        font-size: 1.5rem;
+    }
+    .navbarWrapper{
+        font-size: 1.8rem;
+    }
+}
