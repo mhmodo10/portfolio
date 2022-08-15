@@ -6,7 +6,6 @@ const NavBar = () =>{
                 <p className={"titleWrapper"}>Mahmoud Arab</p>
                 <p className={"title"}>Software engineer / ML engineer</p>
             </div>
-            <div className={"cv"}>CV</div>
 
         </div>
     )

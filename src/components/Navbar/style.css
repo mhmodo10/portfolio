@@ -3,9 +3,9 @@
     width: 100%;
     height: fit-content;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     color: white;
-    /* font-size: 20pt; */
+    margin-left: 10%;
     padding-top: 1%;
     font-family: Fredoka,sans-serif;
 }
